@@ -1,0 +1,16 @@
+from cv2 import cv2
+import numpy as np
+img=cv2.imread('gradient.png')
+_,thresh1=cv2.threshold(img,127,255,cv2.THRESH_BINARY)
+_,thresh2=cv2.threshold(img,127,255,cv2.THRESH_BINARY_INV)
+_,thresh3=cv2.threshold(img,127,255,cv2.THRESH_TRUNC)
+_,thresh4=cv2.threshold(img,127,255,cv2.THRESH_TOZERO)
+_,thresh5=cv2.threshold(img,127,255,cv2.THRESH_TOZERO_INV)
+cv2.imshow('image',img)
+cv2.imshow('thresh_binary',thresh1)
+cv2.imshow('THRESH_BINARY_INV',thresh2)
+cv2.imshow('THRESH_TRUNC',thresh3)
+cv2.imshow('THRESH_TOZERO',thresh4)
+cv2.imshow('THRESH_TOZERO_INV',thresh5)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
